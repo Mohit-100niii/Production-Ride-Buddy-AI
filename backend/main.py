@@ -82,7 +82,10 @@ async def parse_text(request: Request):
 
   
     async with httpx.AsyncClient() as client:
+        
         response = await client.post(OPENROUTER_URL, headers=headers, json=data)
+
+        #response= await httpx.post(OPENROUTER_URL, headers=headers, json=data)
         result = response.json()
         
         print(result)

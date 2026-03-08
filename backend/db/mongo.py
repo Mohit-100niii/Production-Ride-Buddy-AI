@@ -14,6 +14,10 @@ User_last_Ride=db.User_last_detail
 
 def connect_db():
     try:
+        # The connection is established when the client is created
+        client.admin.command('ping')  # Test the connection
         print("✅ Database is Connected Successfully")
+        return db
     except Exception as e:
         print("❌ Database Connection Failed:", e)
+        return None

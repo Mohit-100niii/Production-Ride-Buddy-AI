@@ -76,9 +76,10 @@ endpoint_secret = os.getenv("STRIPE_WEBHOOK_SECRET")
 
 @router.post("/webhook")
 async def stripe_webhook(request: Request, stripe_signature: str = Header(None)):
+    print("Entered Webhook")
     payload = await request.body()
     event = None
-
+    
     try:
         event = stripe.Webhook.construct_event(
             payload=payload, sig_header=stripe_signature, secret=endpoint_secret

@@ -76,15 +76,15 @@ async def user_login(data: LoginRequired):
 
 @router.get("/profile")
 async def get_user_profile(request: Request):
-    print("Enter in Get Profile")
+    #print("Enter in Get Profile")
     auth_header = request.headers.get("Authorization")
     if not auth_header or not auth_header.startswith("Bearer "):      
         return {"message":"Missing or Invalid Token","status":200}
     token = auth_header.split(" ")[1] 
-    print(token)
+    #print(token)
     try:
         payload = await validate_token(token)
-        print(payload)
+        #print(payload)
         return {"email": payload["email"], "name": payload["name"],"status":200}
     except Exception as e:
       
