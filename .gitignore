@@ -1,5 +1,3 @@
-# Ignore frontend for now
-frontend/
 
 # Python + FastAPI ignores
 __pycache__/
