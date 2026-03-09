@@ -5,7 +5,7 @@ It provides **real-time fare estimation, secure payments, and a seamless booking
 
 ---
 
-Demo Link - https://voicerridebuddyai.netlify.app/
+Demo Link - https://production-ride-buddy-ai.vercel.app/
 
 ## ✨ Features
 
