@@ -30,6 +30,25 @@ async def get_distance_from_osm(pickup: str, drop: str):
         pickup_data = pickup_resp.json()
         drop_data = drop_resp.json()
 
+        importance = pickup_data[0].get("importance", 0)
+        #print(f"Pickup importance: {importance}")  # Debug print
+        if importance < 0.2:
+         return {
+        "error": "Pickup location is too vague. Please provide a more specific address or landmark."
+         }
+        
+
+        importance = drop_data[0].get("importance", 0)
+        #print(f"Drop importance: {importance}")  # Debug print
+        if importance < 0.2:
+         return {
+        "error": "Drop location is too vague. Please provide a more specific address or landmark."
+         }
+        
+        print("Inside get_distance_from_osm:")
+        print("Pickup Match:", pickup_data[0]["display_name"])
+        print("Drop Match:", drop_data[0]["display_name"])
+
         if not pickup_data or not drop_data:
             return {"error": "Could not geocode one of the addresses"}
 

@@ -12,8 +12,8 @@ import API_BASE_URL from "../app/config"
 export default function Home() {
   const router = useRouter();
   const fetchUserProfile = async () => {
-    const token = localStorage.getItem("token");
-    console.log("profilemethod called");
+    const token = localStorage.getItem("Usertoken");
+    // console.log("profilemethod called");
 
     console.log(token);
     try {

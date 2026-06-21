@@ -5,18 +5,18 @@ import Link from "next/link";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
-import API_BASE_URL from "../config"
+import API_BASE_URL from "../config";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const router=useRouter();
+  const router = useRouter();
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("Usertoken");
       try {
         const responsesget = await axios.get(`${API_BASE_URL}/auth/profile`, {
           headers: {
@@ -35,37 +35,36 @@ export default function Navbar() {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("Usertoken");
     setUser(null);
     window.location.href = "/";
   };
 
- const showProfile = async () => {
-  const result = await Swal.fire({
-    title: "Your Profile",
-    html: `
+  const showProfile = async () => {
+    const result = await Swal.fire({
+      title: "Your Profile",
+      html: `
       <div style="text-align: left;">
         <p><strong>Email:</strong> ${user.email}</p>
         <p><strong>Name:</strong> ${user.name}</p>
       </div>
     `,
-    background: "#dee2e6", // Tailwind's gray-100
-    showCancelButton: true,
-    confirmButtonText: "Logout",
-    cancelButtonText: "Close",
-    confirmButtonColor: "#d33",
-    cancelButtonColor: "#3085d6",
-    reverseButtons: true,
-    customClass: {
-      popup: 'rounded-lg', // adds rounded corners
+      background: "#dee2e6", // Tailwind's gray-100
+      showCancelButton: true,
+      confirmButtonText: "Logout",
+      cancelButtonText: "Close",
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      reverseButtons: true,
+      customClass: {
+        popup: "rounded-lg", // adds rounded corners
+      },
+    });
+
+    if (result.isConfirmed) {
+      handleLogout();
     }
-  });
-
-  if (result.isConfirmed) {
-    handleLogout();
-  }
-};
-
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-violet-800 shadow-md px-4 py-1">
@@ -103,16 +102,22 @@ export default function Navbar() {
                   Login
                 </button>
               </Link>
+              {/*DriverButton */}
+              <Link href="/driver" target="_blank">
+                <button className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
+                  Driver
+                </button>
+              </Link>
             </>
           ) : (
             <>
-            <button
-              onClick={showProfile}
-              className="px-3 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
-            >
-              My Profile
-            </button>
-            <Link href="/myrides">
+              <button
+                onClick={showProfile}
+                className="px-3 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition"
+              >
+                My Profile
+              </button>
+              <Link href="/myrides">
                 <button className="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 transition">
                   My Rides
                 </button>

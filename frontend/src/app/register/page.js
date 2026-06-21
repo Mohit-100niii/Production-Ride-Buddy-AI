@@ -5,8 +5,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import API_BASE_URL from "../config"
-
+import API_BASE_URL from "../config";
 
 const countryOptions = [
   { label: "India", value: "IN" },
@@ -28,36 +27,33 @@ export default function RegisterPage() {
     control,
     formState: { errors },
   } = useForm();
-const router=useRouter()
+  const router = useRouter();
   const onSubmit = async (data) => {
     console.log(data);
-        Swal.fire({
-        title: "Register in...",
-        allowOutsideClick: false,
-        didOpen: () => {
-          Swal.showLoading(); // ✅ Spinner animation
-        },
-      });
+    Swal.fire({
+      title: "Register in...",
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading(); // ✅ Spinner animation
+      },
+    });
     try {
-      const responsesend = await axios.post(
-        `${API_BASE_URL}/auth/register`,
-        {
-          name: data.name,
-          email: data.email,
-          password: data.password,
-          country: data.country.label,
-        }
-      );
-       Swal.close();
+      const responsesend = await axios.post(`${API_BASE_URL}/auth/register`, {
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        country: data.country.label,
+      });
+      Swal.close();
       const Userdetail = responsesend.data;
       console.log(responsesend);
       Swal.fire({
         icon: "success",
         text: Userdetail.message,
       });
-      router.push("/login")
+      router.push("/login");
     } catch (error) {
-       Swal.close();
+      Swal.close();
       Swal.fire({
         icon: "error",
         title: "Registration Failed",
@@ -74,9 +70,13 @@ const router=useRouter()
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-500 to-blue-50">
       <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-        <h2 className="text-2xl font-semibold text-center mb-6 text-gray-800">
-          Register
+        <h2 className="text-2xl font-semibold text-center mb-2 text-gray-800">
+          Create Your Rider Account
         </h2>
+
+        <p className="text-center text-gray-500 mb-6">
+          Sign up to book rides quickly and easily
+        </p>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
@@ -182,7 +182,7 @@ const router=useRouter()
           </button>
           <div className="text-sm text-gray-600 mt-4 text-center">
             Already have an account?{" "}
-            <Link href="/login">
+            <Link href="/login" prefetch={true}>
               <span className="text-blue-600 font-semibold hover:underline cursor-pointer">
                 Login
               </span>
