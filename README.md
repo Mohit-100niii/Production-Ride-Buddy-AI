@@ -45,6 +45,8 @@ Ride_Buddy_AI_/
 ### Payments
 - **Stripe API** for ride fare payment & receipt emails
 
+### Booking Demo 
+
 ---
 ## 🔑 Environment Variables
 MONGODB_URI=mongodb+srv://your_cluster
