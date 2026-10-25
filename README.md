@@ -1,3 +1,4 @@
+<img width="1911" height="851" alt="Screenshot 2026-10-25 201302" src="https://github.com/user-attachments/assets/2ad357aa-641b-47d7-b7bd-ae7b34866447" />
 # 🚖 RideBuddy AI
 
 RideBuddy AI is an **AI-powered voice-based ride booking platform** that allows users to book rides using natural speech.  
@@ -46,6 +47,18 @@ Ride_Buddy_AI_/
 - **Stripe API** for ride fare payment & receipt emails
 
 ### Booking Demo 
+<img width="1911" height="851" alt="Screenshot 2026-10-25 201302" src="https://github.com/user-attachments/assets/8e75a2ac-2bb8-4092-bbbf-b5f51048a151" />
+<img width="1902" height="843" alt="Screenshot 2026-10-25 201410" src="https://github.com/user-attachments/assets/86c3973c-85b5-4f9a-ad47-958a5794f5c7" />
+<img width="1892" height="835" alt="Screenshot 2026-10-25 201419" src="https://github.com/user-attachments/assets/ec37b205-1690-4303-819d-f583880a6058" />
+<img width="1901" height="835" alt="Screenshot 2026-10-25 201511" src="https://github.com/user-attachments/assets/12535821-d447-493a-9cc8-03f6d827299d" />
+<img width="1916" height="842" alt="Screenshot 2026-10-25 201900" src="https://github.com/user-attachments/assets/d293c1da-3bac-4516-bc66-ea785a4355e8" />
+<img width="1787" height="780" alt="Screenshot 2026-10-25 201954" src="https://github.com/user-attachments/assets/7949d8c3-83b5-406c-8ef8-3880a0ce5d21" />
+<img width="1877" height="837" alt="Screenshot 2026-10-25 202058" src="https://github.com/user-attachments/assets/cd773511-867a-4721-8e3d-868cda621927" />
+<img width="1913" height="847" alt="Screenshot 2026-10-25 202109" src="https://github.com/user-attachments/assets/8594856b-8f1b-48e4-9bab-88cad2ccfeae" />
+<img width="1885" height="782" alt="Screenshot 2026-10-25 202121" src="https://github.com/user-attachments/assets/446aea0e-b932-4e42-96aa-9489a20d787f" />
+<img width="1912" height="846" alt="Screenshot 2026-10-25 202222" src="https://github.com/user-attachments/assets/a7c74451-c450-4461-9943-30daabb43766" />
+
+
 
 ---
 ## 🔑 Environment Variables
