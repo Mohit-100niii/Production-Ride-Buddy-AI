@@ -1,4 +1,3 @@
-<img width="1911" height="851" alt="Screenshot 2026-10-25 201302" src="https://github.com/user-attachments/assets/2ad357aa-641b-47d7-b7bd-ae7b34866447" />
 # 🚖 RideBuddy AI
 
 RideBuddy AI is an **AI-powered voice-based ride booking platform** that allows users to book rides using natural speech.  
